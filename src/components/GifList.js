@@ -1,25 +1,9 @@
-import React, { useEffect, useState }  from "react";
+// import react from "react";
 
-function GifList({data}){
-const [List,setData]=useState([])
-useEffect(()=>{
-if(data.length!=0){
-    setData(data)
-   
+function GiftList({image, name}){
+    return <li>
+        <h2>{name}</h2>
+        <img src={image} alt={name}/>
+    </li>
 }
-},[data])
-return(
-    
-<div>
-    <ul>
-       
-{data.map((item,i)=>(
-   <li key={i}> 
-       <img src={item.url} alt="gif" key={i}/>
-   </li>
-))}
-</ul>
-</div>
-)
-}
-export default GifList;
+export default GiftList;
